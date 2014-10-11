@@ -1,0 +1,41 @@
+
+      <ion-view title="Agile Poker" ng-controller="HeaderCtrl">
+        <ion-nav-buttons side="left">
+    	<button class="button button-clear" ng-click="showAbout()">
+    		<img src="img/acm_logo.svg" height="30"/>
+    	</button>
+    		<button class="button button-icon icon ion-ios7-information-outline" ng-click="showInfo()"></button>
+    	</ion-nav-buttons>
+
+        <ion-nav-buttons side="right">
+			<a href="#/settings"><button class="button right button-icon icon ion-ios7-gear"></button></a> 
+        </ion-nav-buttons>
+
+      
+      <ion-content class="has-header">
+
+    <div style="width:80px;" ng-controller="CardsCtrl">
+    	<div class="scroll">
+      <ion-list class="disable-user-behavior "><div class="list text-center">
+
+        <ion-item ng-if="card.text!='?' && card.text!='C'" ng-repeat="card in CardsWithColors"  ng-click="showCard(card)" class="item text-shadow" style="background-color: #{{card.color}}; color: #000000; font-weight: bolder;">
+        	{{card.text}}
+        </ion-item>
+        <ion-item ng-if="card.text=='?' && card.text!='C'" ng-repeat="card in CardsWithColors"  ng-click="showCard(card)" class="item text-shadow" style="background-color: #{{card.color}}; color: #000000; font-weight: bolder;">
+        	<i class="ion-help"></i>
+        </ion-item>
+        <ion-item ng-if="card.text!='?' && card.text=='C'" ng-repeat="card in CardsWithColors"  ng-click="showCard(card)" class="item text-shadow" style="background-color: #{{card.color}}; color: #000000; font-weight: bolder;">
+        	<i class="ion-coffee"></i>
+        </ion-item>        
+      </div></ion-list>
+    </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="height: 162px; -webkit-transform: translate3d(0px, 0px, 0px) scaleY(1);"></div></div>
+    
+      </div>
+
+      </ion-content>
+    <div style="margin-left:80px; margin-top: 44px;">
+    	<div style="width:100%;">
+    	<img src="http://sustainablepace.net/content/23-management-3.0/01.jpg" width="100%" />
+    	</div>
+    	</div>
+            </ion-view>
