@@ -1,6 +1,11 @@
 <div class="modal" on-swipe="closeCard()" ng-click="closeCard()" style="background-color: #{{selectedCard.color}}">
   <div class="has-header full-height">
 	<div class="full-height">
+  <div class="cardheader text-shadow" ng-if="selectedCard.text!='?' && selectedCard.text!='C'" >
+    {{selectedCard.text}}
+  </div>
+    <div class="cardheader text-shadow" ng-if="selectedCard.text=='?' && selectedCard.text!='C'" ><i class="ion-help"></i></div>
+    <div class="cardheader text-shadow" ng-if="selectedCard.text!='?' && selectedCard.text=='C'" ><i class="ion-coffee"></i></div>
   <div class="cardheader text-shadow">
     {{selectedCard.text}}
   </div>
@@ -12,8 +17,10 @@
 
 </div> 
   </div>
-    <div class="cardfooter text-shadow">
+    <div class="cardfooter text-shadow" ng-if="selectedCard.text!='?' && selectedCard.text!='C'" >
     {{selectedCard.text}}
   </div>
+    <div class="cardfooter text-shadow" ng-if="selectedCard.text=='?' && selectedCard.text!='C'" ><i class="ion-help"></i></div>
+    <div class="cardfooter text-shadow" ng-if="selectedCard.text!='?' && selectedCard.text=='C'" ><i class="ion-coffee"></i></div>
 </div>
 
