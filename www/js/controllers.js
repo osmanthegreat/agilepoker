@@ -63,7 +63,8 @@ $scope.partitionedData = partition($scope.CardsWithColors, 4);
 	else 
 	{
 		window.localStorage['CardsWithColors'] = JSON.stringify($scope.CardsWithColors);
-	}function partition(arr, size) {
+	}
+	function partition(arr, size) {
 	
   var newArr = [];
   for (var i=0; i<arr.length; i+=size) {
@@ -72,7 +73,7 @@ $scope.partitionedData = partition($scope.CardsWithColors, 4);
   return newArr;
 };
 $scope.selectedCard = $stateParams;
-$scope.partitionedData = partition($scope.Cards, 3);	
+$scope.partitionedData = partition($scope.CardsWithColors, 4);	
 
 	$scope.go=function(path){
 		$location.path( '/app/card/'+path );
