@@ -1,0 +1,58 @@
+
+      <ion-view title="Agile Poker" ng-controller="HeaderCtrl">
+        <ion-nav-buttons side="left">
+    	<button class="button button-clear" ng-click="showAbout()">
+    		<img src="img/acm_logo.svg" height="30"/>
+    	</button>
+    		<button class="button button-icon icon ion-ios7-information-outline" ng-click="showInfo()"></button>
+    	</ion-nav-buttons>
+
+        <ion-nav-buttons side="right">
+			<a href="#/settings"><button class="button right button-icon icon ion-ios7-gear"></button></a> 
+        </ion-nav-buttons>
+
+      
+      <ion-content class="has-header"  ng-controller="CardsCtrl">
+<div class="row" ng-repeat="rows in partitionedData">
+
+ 	 <div class="col" ng-repeat="item in rows" ng-if="item.text!='?' && item.text!='C'">
+  	<div class="card no-padding" ng-click="showCard(item)">
+  	 
+  		<div class="item text-center text-shadow" style="background-color: #{{item.color}}; color: #000000; font-weight: bolder;" ng-if="item!='C' && item!='?'">
+  		<p style="margin-top: 10px;margin-bottom: 10px;">{{item.text}}</p>
+  		
+  		</div> 		
+
+  		
+  	</div>
+
+  	</div>
+ 	 <div class="col" ng-repeat="item in rows" ng-if="item.text=='?' && item.text!='C'">
+  	<div class="card  no-padding"  ng-click="showCard(item)">
+  	 
+  		<div class="item text-center text-shadow" style="background-color: #{{item.color}}; color: #000000; font-weight: bolder;" ng-if="item!='C' && item!='?'">
+  		<p style="margin-top: 10px;margin-bottom: 10px;"><i class="ion-help"></i></p>
+  		
+  		</div> 		
+
+  		
+  	</div>
+
+  	</div>
+ 	 <div class="col" ng-repeat="item in rows" ng-if="item.text!='?' && item.text=='C'">
+  	<div class="card  no-padding"   ng-click="showCard(item)">
+  	 
+  		<div class="item text-center text-shadow" style="background-color: #{{item.color}}; color: #000000; font-weight: bolder;" ng-if="item!='C' && item!='?'">
+  		<p style="margin-top: 10px;margin-bottom: 10px;"><i class="ion-coffee"></i></p>
+  		
+  		</div> 		
+
+  		
+  	</div>
+
+  	</div>  	  	
+</div> 
+
+
+      </ion-content>
+            </ion-view>
